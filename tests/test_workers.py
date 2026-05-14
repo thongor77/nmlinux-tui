@@ -141,3 +141,8 @@ def test_parse_cidr_too_large():
 def test_ping_host_localhost():
     alive, hostname = _ping_host("127.0.0.1", timeout=1)
     assert alive is True
+
+
+def test_ping_stats_last_rtt():
+    stats = PingStats(sent=2, received=2, rtts=[10.0, 20.0])
+    assert stats.last_rtt == 20.0
