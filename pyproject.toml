@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nmlinux-tui"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = ["textual>=0.70"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+nmlinux-tui = "nmlinux_tui.app:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
